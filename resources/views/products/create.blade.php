@@ -1,16 +1,16 @@
 @extends('products.layout');
 @section('content');
 
-<div class="row" >
-    <div class="col-lg-12 margin-tb">
-        <div class="pull-left">
-            <h2>Add New Product</h2>
-        </div>
-        <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('products.index') }}">Back</a>
-        </div>
+
+<div style="display: flex; justify-content: space-between;">
+    <div class="col-lg-6">
+        <h2>Add New Tasks</h2>
+    </div>
+    <div>
+        <a class="btn btn-primary" href="{{ route('products.index') }}">Back</a>
     </div>
 </div>
+
 
 @if ($errors->any())
 <div class="alert alert-danger">
@@ -28,21 +28,20 @@
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Name:</strong>
-                <input type="text" name="name" class="form-control" placeholder="Name">
+                <strong>Title:</strong>
+                <input type="text" name="name" class="form-control" placeholder="Title" style="margin-bottom: 10px;">
             </div>    
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Detail:</strong>
-                <input type="text" name="detail" height=450px class="form-control" placeholder="Detail">
+                <strong>Description:</strong>
+                <textarea name="detail" class="form-control" rows="6" placeholder="Detail"></textarea>
             </div>    
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+        <div class="col-xs-12 col-sm-12 col-md-12 text-center"  style="margin-top: 10px;">
             <button type="submit" class="btn btn-primary">Submit</button>
         </div>
     </div>
 </form>
-
 @endsection

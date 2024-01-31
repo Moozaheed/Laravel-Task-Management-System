@@ -10,15 +10,12 @@
 <body>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container">
-          <a class="navbar-brand" href="#">Navbar</a>
+          <a class="navbar-brand" href="#" style="color: #3498db; font-size: 30px; font-weight: bold;">Brain Station 23</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
             </ul>
             <form action="{{ route('logout') }}" method="POST" class="d-flex" role="search">
                 @csrf
@@ -29,8 +26,15 @@
         </div>
     </nav>
  
-    <div class="container">
-       <h1> Welcome, {{ Auth::user()->name }}</h1>
+    <div class="container" style="border: 2px solid #3498db; padding: 20px; border-radius: 10px; text-align: center;">
+      <h1>Welcome, <span style="color: #3498db;">{{ Auth::user()->name }}</span></h1>
     </div>
+  
+  
+
+    <div class="container">
+      <br>
+      @yield('content')
+  </div>
 </body>
 </html>

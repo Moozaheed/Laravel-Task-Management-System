@@ -1,21 +1,19 @@
 @extends('products.layout')
 @section('content')
 
-<div class="row">
-    <div class="col-lg-12 margin-tb">
-        <div class="pull-right">
-            <h2>Edit Product</h2>
-        </div>
-
-        <div class="pull-riht">
-            <a class="btn btn-primary" href="{{ route('products.index') }}">Back</a>
-        </div>
+<div style="display: flex; justify-content: space-between;">
+    <div class="col-lg-6">
+        <h2>Edit Task</h2>
+    </div>
+    <div>
+        <a class="btn btn-primary" href="{{ route('products.index') }}">Back</a>
     </div>
 </div>
 
+
 @if ($errors->any())
     <div class="alert alert-danger">
-        <strong>Whoops!</strong> There were some problems with your input.<br></br>
+        <strong>Whoops!</strong> There were some problems with your input.<br><br>
         <ul>
             @foreach ($errors->all() as $error)
                 <li>{{ $error }}</li>
@@ -25,31 +23,34 @@
 @endif
 
 
-<form action="{{ route('products.update',$product->id) }}" method="POST">
+<form action="{{ route('products.update', $product->id) }}" method="POST">
     @csrf
     @method('PUT')
 
     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="from-group">
-                <strong>Name:</strong>
-                <input type="text" name="name" value="{{ $product->name }}" class="from-control" placeholder="Name">
+        <div class="col-xs-12 col-sm-12 col-md-12 mb-3">
+            <div class="border p-3">
+                <div class="form-group">
+                    <strong class="text-lg">Name:</strong>
+                    <input type="text" name="name" value="{{ $product->name }}" class="form-control" placeholder="Name">
+                </div>
             </div>
         </div>
 
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="from-group">
-                <strong>Detail:</strong>
-                <input type="text" name="detail" value="{{ $product->detail }}" class="from-control" placeholder="Detail">
-                {{-- <input class="from-control" style="height:150px" name="detail" placeholder="Detail">{{ $product->detail }}> --}}
+        <div class="col-xs-12 col-sm-12 col-md-12 mb-3">
+            <div class="border p-3">
+                <div class="form-group">
+                    <strong class="text-lg">Detail:</strong>
+                    <input type="text" name="detail" value="{{ $product->detail }}" class="form-control" placeholder="Detail">
+                </div>
             </div>
         </div>
 
-        <div class="col-xs-12 col-sm-12 col-md-12 col-md-12 text-center">
+        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
             <button type="submit" class="btn btn-primary">Submit</button>
         </div>
     </div>
-
 </form>
+
 
 @endsection

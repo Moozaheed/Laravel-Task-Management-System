@@ -1,16 +1,16 @@
 @extends('products.layout')
 @section('content')
 
-<div class="row">
-    <div class="col-lg-12">
-        <div class="pull-left">
-            <h2>All Products</h2>
-        </div>
-        <div class="pull-right">
-            <a class="btn btn-success" href="{{ route('products.create') }}">Create New Products</a>
-        </div>
+<div style="display: flex; justify-content: space-between;">
+    <div class="col-lg-6">
+        <h2>All Tasks</h2>
+    </div>
+    <div>
+        <a class="btn btn-success" href="{{ route('products.create') }}">Create New Task</a>
     </div>
 </div>
+
+
 
 @if ($message = Session::get('success'))
     <div class="alert alert-success">
@@ -21,10 +21,13 @@
 <table class="table table-bordered">
     <tr>
         <th>ID</th>
-        <th>Name</th>
+        <th>Tittle</th>
         <th>Details</th>
-        <th width='280px'>Action</th>
+        <th width='215px'>Action</th>
     </tr>
+
+
+
     @foreach ($products as $product )
         <tr>
             <td>{{ $product->id }}</td>
@@ -42,6 +45,11 @@
             </td>
         </tr>
     @endforeach
+</table>
+
+
+<!-- Pagination links -->
+{{ $products->links() }}
 
 
 @endsection

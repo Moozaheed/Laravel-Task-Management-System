@@ -17,12 +17,14 @@ class AuthController extends Controller
  
     public function registerPost(Request $request)
     {
+        // Validate user input
         $validator = Validator::make($request->all(), [
             'name' => 'required|string',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:6',
         ]);
 
+        // If validation fails, return error response
         if ($validator->fails()) {
             return response()->json([
                 'status' => 'error',
@@ -31,23 +33,27 @@ class AuthController extends Controller
             ], 422);
         }
 
+        // Create a new User instance
         $user = new User();
 
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
 
+        // Save the user to the database
         $user->save();
 
-        return response()->json([
+         // Redirect to the login page upon successful registration
+        return redirect()->route('login')->with([
             'status' => 'success',
-            'message' => 'Registration successful',
+            'message' => 'Registration successful. Please log in.',
             'user' => [
                 'id' => $user->id,
                 'name' => $user->name,
                 'email' => $user->email,
             ],
-        ], 201); // 201 Created status code for successful resource creation
+        ]);
+        
     }
  
     public function login()

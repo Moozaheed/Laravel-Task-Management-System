@@ -12,7 +12,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::latest()->paginate(5);
+        $products = Product::paginate(5);
+        //$products = Product::latest()->paginate(5);
         return view('products.index', compact('products'))->with(request()->input('page'));
     }
 
@@ -39,7 +40,7 @@ class ProductController extends Controller
         Product::create($request->all());
         
         //redirect to products page
-        return redirect()->route('products.index')->with('success', 'Product created successfully.');
+        return redirect()->route('products.index')->with('success', 'Task Created Successfully.');
     }
 
     /**
@@ -74,7 +75,7 @@ class ProductController extends Controller
         $product->update($request->all());
         
         //redirect to products page
-        return redirect()->route('products.index')->with('success', 'Product updated successfully.');
+        return redirect()->route('products.index')->with('success', 'Task Updated Successfully.');
     }
 
     /**
@@ -87,6 +88,6 @@ class ProductController extends Controller
 
         //redirect the user and display success message
 
-        return redirect()->route('products.index')->with('success', 'Product deleted successfully.');
+        return redirect()->route('products.index')->with('success', 'Task Deleted Successfully.');
     }
 }
