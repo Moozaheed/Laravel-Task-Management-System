@@ -12,7 +12,6 @@
 
 The Laravel Task Management System is a web application developed using the Laravel PHP framework. It provides a simple yet effective platform for managing tasks, allowing users to register, log in, and perform basic CRUD (Create, Read, Update, Delete) operations on tasks.
 
-
 ## Features
 
 - **User Authentication:** The system includes a secure user authentication system that allows users to register, log in, and log out.
@@ -24,10 +23,6 @@ The Laravel Task Management System is a web application developed using the Lara
 - **Pagination:** Task listings are paginated, improving the user experience when navigating through a large number of tasks.
 
 - **Middleware for Authorization:** Middleware is employed to restrict access to certain features, ensuring that only authenticated users can manage tasks.
-
-
-
-
 
 ## Usage
 
@@ -47,24 +42,21 @@ The Laravel Task Management System is a web application developed using the Lara
 - [Laravel](https://laravel.com/) - PHP web framework.
 - [Bootstrap](https://getbootstrap.com/) - Front-end framework.
 
-
 ## Installation
-
 
 Follow these steps to set up and run the project locally:
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/Moozaheed/Project
+   git clone https://github.com/Moozaheed/Laravel-Task-Management-System.git
 
 2. **Navigate to the Project Directory:**
    ```bash
-   cd Project
+   cd Laravel-Task-Management-System
 
 3. **Install dependencies:**
    ```bash
    composer install
-
 
 4. **Run migrations:**
     ```bash
@@ -77,8 +69,6 @@ Follow these steps to set up and run the project locally:
 1. **The application will be accessible at http://localhost:8000.**
 
 ## Screenshots
-
-## Application Screenshots
 
 ![Registration Page](https://github.com/Moozaheed/Project/blob/main/Screnshots/Registration.png)
 
@@ -93,7 +83,6 @@ Follow these steps to set up and run the project locally:
 ![Edit Task Page](https://github.com/Moozaheed/Project/blob/main/Screnshots/Edit%20Task.png)
 
 ![Delete Task Page](https://github.com/Moozaheed/Project/blob/main/Screnshots/Delete%20Task.png)
-
 
 
 ## Authors
