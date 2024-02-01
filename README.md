@@ -78,8 +78,27 @@ Follow these steps to set up and run the project locally:
 
 ## Screenshots
 
-## Application Screenshot
+## Application Screenshots
 
-![Login Page](https://github.com/your-username/your-repo/raw/main/screenshots/login-page.png)
+![Registration Page](https://github.com/Moozaheed/Project/blob/main/Screnshots/Registration.png)
 
+![Login Page](https://github.com/Moozaheed/Project/blob/main/Screnshots/Login.png)
+
+![All Task Page](https://github.com/Moozaheed/Project/blob/main/Screnshots/All%20Tasks.png)
+
+![Create Task Page](https://github.com/Moozaheed/Project/blob/main/Screnshots/Add%20New%20Task.png)
+
+![Show Task Page](https://github.com/Moozaheed/Project/blob/main/Screnshots/Show%20Task.png)
+
+![Edit Task Page](https://github.com/Moozaheed/Project/blob/main/Screnshots/Edit%20Task.png)
+
+![Delete Task Page](https://github.com/Moozaheed/Project/blob/main/Screnshots/Delete%20Task.png)
+
+
+
+## Authors
+
+- [Github](https://www.github.com/moozaheed) 
+**Name:** G. M. Mozahed  
+**Email:** giyasmahmudmozahed@gmail.com
 
