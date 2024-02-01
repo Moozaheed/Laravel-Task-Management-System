@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -12,8 +11,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        // Uncomment the line below if you want to seed the 'users' table
         // \App\Models\User::factory(10)->create();
-        \App\Models\Product::factory(20)->create();
-        $this->call(ProductSeeder::class);
+
+        // Create 20 instances of the 'Task' model using the factory
+        \App\Models\Task::factory(20)->create();
+
+        // Call the TaskSeeder class
+        $this->call(TaskSeeder::class);
     }
 }

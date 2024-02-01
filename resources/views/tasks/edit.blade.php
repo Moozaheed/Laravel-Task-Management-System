@@ -1,31 +1,30 @@
-@extends('products.layout')
-@section('content')
+@extends('tasks.layout') <!-- Extending the layout -->
+
+@section('content') <!-- Opening content section -->
 
 <div style="display: flex; justify-content: space-between;">
     <div class="col-lg-6">
-        <h2>Edit Task</h2>
+        <h2>Edit Task</h2> <!-- Heading for the edit task section -->
     </div>
     <div>
-        <a class="btn btn-primary" href="{{ route('products.index') }}">Back</a>
+        <a class="btn btn-primary" href="{{ route('tasks.index') }}">Back</a> <!-- Back button to return to the task index page -->
     </div>
 </div>
-
 
 @if ($errors->any())
     <div class="alert alert-danger">
         <strong>Whoops!</strong> There were some problems with your input.<br><br>
         <ul>
             @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach 
+                <li>{{ $error }}</li> <!-- Displaying validation errors -->
+            @endforeach
         </ul>
     </div>
 @endif
 
-
-<form action="{{ route('products.update', $product->id) }}" method="POST">
-    @csrf
-    @method('PUT')
+<form action="{{ route('tasks.update', $product->id) }}" method="POST">
+    @csrf <!-- CSRF protection -->
+    @method('PUT') <!-- Using the PUT method for updating -->
 
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 mb-3">
@@ -47,10 +46,9 @@
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Submit</button> <!-- Submit button for the form -->
         </div>
     </div>
 </form>
 
-
-@endsection
+@endsection <!-- Closing content section -->

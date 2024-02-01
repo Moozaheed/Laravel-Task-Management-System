@@ -67,18 +67,19 @@ class AuthController extends Controller
             'email' => $request->email,
             'password' => $request->password,
         ];
- 
+
+        // Attempt to authenticate the user
         if (Auth::attempt($credetials)) {
-            return redirect('/products')->with('success', 'Login Success');
+            return redirect('/tasks')->with('success', 'Login Success');
         }
- 
+
+        // Redirect back with an error message if authentication fails
         return back()->with('error', 'Error Email or Password');
     }
  
     public function logout()
     {
         Auth::logout();
- 
         return redirect()->route('login');
     }
 }
