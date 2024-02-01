@@ -5,7 +5,7 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Task>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Product>
  */
 class TaskFactory extends Factory
 {
@@ -17,9 +17,9 @@ class TaskFactory extends Factory
     public function definition(): array
     {
         return [
-            // Define the default values for the Task model
-            'name' => 'Task Name',
-            'detail' => $this->faker->text(200),
+            //
+            'name'=>'Task Name',
+            'detail'=>$this->faker->text(200)
         ];
     }
 }

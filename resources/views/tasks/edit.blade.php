@@ -22,7 +22,7 @@
     </div>
 @endif
 
-<form action="{{ route('tasks.update', $product->id) }}" method="POST">
+<form action="{{ route('tasks.update', $task->id) }}" method="POST">
     @csrf <!-- CSRF protection -->
     @method('PUT') <!-- Using the PUT method for updating -->
 
@@ -31,7 +31,7 @@
             <div class="border p-3">
                 <div class="form-group">
                     <strong class="text-lg">Name:</strong>
-                    <input type="text" name="name" value="{{ $product->name }}" class="form-control" placeholder="Name">
+                    <input type="text" name="name" value="{{ $task->name }}" class="form-control" placeholder="Name">
                 </div>
             </div>
         </div>
@@ -40,7 +40,7 @@
             <div class="border p-3">
                 <div class="form-group">
                     <strong class="text-lg">Detail:</strong>
-                    <input type="text" name="detail" value="{{ $product->detail }}" class="form-control" placeholder="Detail">
+                    <textarea name="detail" class="form-control" rows="6" placeholder="Detail">{{ $task->detail }}</textarea>
                 </div>
             </div>
         </div>

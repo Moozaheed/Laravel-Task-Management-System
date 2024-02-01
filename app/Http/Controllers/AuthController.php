@@ -43,7 +43,7 @@ class AuthController extends Controller
         // Save the user to the database
         $user->save();
 
-         // Redirect to the login page upon successful registration
+        // Redirect to the login page upon successful registration
         return redirect()->route('login')->with([
             'status' => 'success',
             'message' => 'Registration successful. Please log in.',
@@ -72,6 +72,7 @@ class AuthController extends Controller
         if (Auth::attempt($credetials)) {
             return redirect('/tasks')->with('success', 'Login Success');
         }
+
 
         // Redirect back with an error message if authentication fails
         return back()->with('error', 'Error Email or Password');
